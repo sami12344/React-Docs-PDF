@@ -1,0 +1,31 @@
+{
+  "name": "sandbox-deps",
+  "private": true,
+  "description": "Exact dependency versions used by the react.dev sandboxes (default template and per-sandbox package.json files)",
+  "dependencies": {
+    "react-canary": "npm:react@19.3.0-canary-f1f7ed2a-20260904",
+    "react-dom-canary": "npm:react-dom@19.3.0-canary-f1f7ed2a-20260904",
+    "react-latest": "npm:react@19.3.1",
+    "react-dom-latest": "npm:react-dom@19.3.1",
+    "react-1930": "npm:react@19.3.0",
+    "react-dom-1930": "npm:react-dom@19.3.0",
+    "react-1900": "npm:react@19.0.0",
+    "react-dom-1900": "npm:react-dom@19.0.0",
+    "react-beta": "npm:react@19.0.0-beta-26f2496093-20240514",
+    "react-dom-beta": "npm:react-dom@19.0.0-beta-26f2496093-20240514",
+    "react-rc": "npm:react@19.0.0-rc-3edc000d-20240926",
+    "react-dom-rc": "npm:react-dom@19.0.0-rc-3edc000d-20240926",
+    "react-1930sh": "npm:react@19.3.1",
+    "immer": "1.7.3",
+    "use-immer": "0.5.1",
+    "toastify-js": "1.12.0",
+    "react-error-boundary": "4.0.3",
+    "leaflet": "1.9.1",
+    "remarkable": "2.0.1",
+    "html-format": "1.1.7",
+    "react-devtools-cdt-mcp": "0.0.1",
+    "eslint": "7.32.0",
+    "eslint-plugin-react-hooks": "0.0.0-experimental-fabef7a6b-20221215",
+    "@babel/parser": "7.26.10"
+  }
+}

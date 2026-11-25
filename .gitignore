@@ -1,0 +1,14 @@
+# dependencies and intermediates (all reproducible; the snapshot and run records are in the release's source package)
+node_modules/
+sandbox-deps/node_modules/
+build/
+cache/
+# the PDFs and archives are attached to the GitHub release, not stored in git
+output/*.pdf
+output/*.zip
+# filled in by the Pages workflow from the release
+site/pdf/
+__pycache__/
+*.pyc
+*.log
+.DS_Store

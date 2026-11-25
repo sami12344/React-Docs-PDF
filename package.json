@@ -1,0 +1,21 @@
+{
+  "name": "react-docs-print",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "private": "true",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "esbuild": "^0.25.12",
+    "opentype.js": "^2.0.0",
+    "puppeteer-core": "^25.18.1",
+    "shiki": "^4.6.0"
+  }
+}
