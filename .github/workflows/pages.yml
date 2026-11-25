@@ -1,0 +1,47 @@
+name: Deploy website
+
+# Publishes site/ to GitHub Pages, with the volume PDFs and the master index copied from the release (pdf/),
+# so that they can also be read in the browser. The PDFs themselves are not stored in the repository.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/pages.yml'
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Assemble the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p _site/pdf
+          cp -r site/. _site/
+          gh release download v1.0.0 --repo "$GITHUB_REPOSITORY" --dir _site/pdf \
+            --pattern 'React-Print-Edition-Vol*.pdf' --pattern 'React-Print-Edition-Master-Index.pdf'
+          touch _site/.nojekyll
+          ls -la _site _site/pdf
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v5
